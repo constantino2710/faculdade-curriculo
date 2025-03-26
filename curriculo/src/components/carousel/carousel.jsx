@@ -18,7 +18,7 @@ export function Carousel() {
   }, [])
 
   return (
-    <div className="flex justify-center items-center h-screen "
+    <div className="flex justify-center items-center "
     >
       <motion.div ref={carousel}
       className="w-[900px] overflow-hidden cursor-grab"

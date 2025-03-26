@@ -1,5 +1,6 @@
 import {Header} from './components/header/header'
-import { Carousel } from './components/carousel/carousel'
+
+import  Card  from './components/card'
 import './App.css'
 
 
@@ -10,7 +11,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Carousel />
+      <Card />
     </div>
   )
 }
