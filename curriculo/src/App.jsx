@@ -1,4 +1,5 @@
 import {Header} from './components/header/Header'
+import { Carousel } from './components/carousel/carousel'
 import './App.css'
 
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Carousel />
     </div>
   )
 }
