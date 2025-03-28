@@ -1,4 +1,3 @@
-import eu from '../../assets/eu.jpg'
 
 export function Header() {
     return(
