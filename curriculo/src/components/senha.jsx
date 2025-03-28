@@ -83,7 +83,7 @@ export function PasswordGame() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[var(--gray-900)] p-4">
-      <div className="bg-[var(--gray-900)] shadow-lg rounded-2xl p-6 w-full max-w-md">
+      <div className="bg-[var(--gray-900)] shadow-lg rounded-2xl p-6 w-full max-w-md shadow-none">
         <h1 className="text-2xl font-bold mb-4 text-center">Jogo da Senha</h1>
         {!jogoIniciado ? (
           <div className="flex flex-col items-center">
