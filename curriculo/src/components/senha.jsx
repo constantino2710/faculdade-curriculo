@@ -71,7 +71,7 @@ export function PasswordGame() {
     const { acertos, deslocados } = verificarTentativa(senha, entrada);
 
     const resultado = `${entrada} → ${acertos} na posição correta, ${deslocados} correto(s) fora de posição.`;
-    setTentativas((prev) => [...prev, resultado]);
+    setTentativas((prev) => [resultado, ...prev]);
 
     if (acertos === 4) {
       setVitoria(true);
@@ -79,6 +79,10 @@ export function PasswordGame() {
     } else {
       setMensagem(resultado);
     }
+  };
+
+  const revelarSenha = () => {
+    alert(`Senha: ${senha.join("")}`);
   };
 
   return (
@@ -96,23 +100,32 @@ export function PasswordGame() {
           </div>
         ) : (
           <>
+          <div className='gap-2 flex flex-col items-center'>
+
             <input
               ref={inputRef}
               type="text"
               value={entrada}
               onChange={handleChange}
-              className="w-full p-2  rounded mb-4 focus:outline-none focus:ring-2 focus:ring-white bg-[var(--gray-600)] text-white"
+              className="w-full rounded mb-4 bg-[var(--gray-600)] text-white h-8"
               placeholder="Digite 4 dígitos únicos"
               maxLength={4}
               disabled={vitoria}
             />
             <button
               onClick={handleSubmit}
-              className="w-full bg-[var(--green-500)] text-white py-2 rounded"
+              className="w-full bg-[var(--green-500)] text-white py-2 rounded h-8"
               disabled={vitoria}
             >
               Verificar
             </button>
+            <button
+              onClick={revelarSenha}
+              className="w-full bg-[var(--red-500)] text-white py-2 rounded mt-2 h-8"
+            >
+              Revelar Senha
+            </button>
+          </div>
             {mensagem && (
               <div className="mt-4 text-center text-lg font-medium text-white">
                 {mensagem}
